@@ -58,3 +58,6 @@ rules = [
     # Fallback
     { name = "*", use = ["open", "reveal"] },
 ]
+
+[mgr]
+show_hidden = true

@@ -4,6 +4,7 @@ Cursor/
 .vscode/
 Kiro/
 configstore/
+blender/
 
 # Development Tools & Languages
 go/
@@ -53,12 +54,14 @@ gtk-4.0/
 qt6ct/
 xfce4/
 xsettingsd/
+htop/
 
 # Audio
 pulse/
 
 # Electron Apps
 Electron/
+Notion/
 
 # Python
 __pycache__/

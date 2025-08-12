@@ -4,28 +4,28 @@ css = { src = "wofi.css", dst = "~/.config/wofi/colors.css" }
  */
 
 :root {
-    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Nord/nord-kurzgesagt-blackhole.png");
+    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Nord/nord-soupKong.png");
 
     /* Special */
     --background: #0E0F13;
     --foreground: #B6B8BC;
-    --cursor: #C2BAC7;
+    --cursor: #A29B9E;
 
     /* Colors */
-    --color0:  #3E3931;
+    --color0:  #3F3833;
     --color1:  #5D626B;
-    --color2:  #A26D77;
-    --color3:  #677AB5;
-    --color4:  #8AC3CF;
-    --color5:  #CEBDD2;
-    --color6:  #E9CF9D;
+    --color2:  #94787D;
+    --color3:  #788296;
+    --color4:  #BB5F69;
+    --color5:  #8E7E7F;
+    --color6:  #8091AB;
     --color7:  #8E9197;
     --color8:  #63666A;
     --color9:  #5D626B;
-    --color10: #A26D77;
-    --color11: #677AB5;
-    --color12: #8AC3CF;
-    --color13: #CEBDD2;
-    --color14: #E9CF9D;
+    --color10: #94787D;
+    --color11: #788296;
+    --color12: #BB5F69;
+    --color13: #8E7E7F;
+    --color14: #8091AB;
     --color15: #8E9197;
 }

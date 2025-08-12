@@ -65,35 +65,13 @@ window#waybar {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* #hyprland-workspaces {
-    margin: 0 8px;
-    padding: 0 8px;
-    background: transparent;
+#workspaces button.urgent {
+  background: #cc241d;
+  animation: blink 1s linear infinite;
 }
 
-#hyprland-workspaces button {
-    padding: 0 12px;
-    margin: 0 2px;
-    color: gray;
-    font-size: 14px;
-    border-radius: 8px;
-}
-
-#hyprland-workspaces button.active {
-    color: @foreground;
-    background: rgba(255, 255, 255, 0.1);
-    font-weight: 600;
-}
-
-#hyprland-workspaces button.urgent {
-    color: red;
-    animation: urgent-pulse 1s ease infinite;
-} */
-
-@keyframes urgent-pulse {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
-    50% { opacity: 0.5; }
+@keyframes blink {
+  50% { opacity: 0.5; }
 }
 
 /* ======================= */

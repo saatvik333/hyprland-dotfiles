@@ -1,16 +1,11 @@
 {
+  "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
   "spacing": 0,
   "margin": "8px 8px 0 8px",
-  "modules-left": [
-    "custom/arch",
-    "hyprland/workspaces"
-  ],
-  "modules-center": [
-    "clock",
-    "mpris"
-  ],
+  "modules-left": ["custom/arch", "mpris", "hyprland/workspaces"],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "group/group-extras",
@@ -30,11 +25,7 @@
       "children-class": "extras",
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/menu",
-      "cpu",
-      "custom/updates"
-    ]
+    "modules": ["custom/menu", "cpu", "custom/updates"]
   },
   "group/brightness": {
     "orientation": "inherit",
@@ -43,10 +34,7 @@
       "children-class": "brightness",
       "transition-left-to-right": false
     },
-    "modules": [
-      "backlight",
-      "backlight/slider"
-    ]
+    "modules": ["backlight", "backlight/slider"]
   },
   "group/audio": {
     "orientation": "inherit",
@@ -55,10 +43,7 @@
       "children-class": "audio",
       "transition-left-to-right": false
     },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider"
-    ]
+    "modules": ["pulseaudio", "pulseaudio/slider"]
   },
   "custom/arch": {
     "format": "󰣇  btw",
@@ -67,16 +52,32 @@
     "on-click-right": ""
   },
   "hyprland/workspaces": {
-    "format": "{id}",
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "*",
-      "special": "󰍛"
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "default": "◯",
+      "special": "特別",
+      "empty": "◯",
+      "urgent": "緊急"
     },
-    "sort-by-number": true,
-    "all-outputs": true,
-    "persistent_workspaces": {
-      "*": 4
-    }
+    "sort-by": "number",
+    "all-outputs": false,
+    "show-special": true,
+    "special-visible-only": true,
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "on-click": "activate",
+    "ignore-workspaces": ["scratch"]
   },
   "clock": {
     "interval": 60,
@@ -95,19 +96,23 @@
     },
     "player-icons": {
       "default": "󱜏",
-      "spotify_player": "",
-      "spotify": "",
+      "spotify_player": "",
+      "spotify": "",
       "firefox": "󰺕",
-      "chrome": "",
+      "chrome": "",
       "vlc": "󰕼"
-      },
-    "max-length": 30,
+    },
     "return-type": "json",
     "interval": 1,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "{title} • {artist} • {dynamic}",
+    "dynamic-order": ["position", "length"],
+    "ellipsis": "…",
+    "title-len": 30,
+    "artist-len": 25
   },
   "tray": {
     "icon-size": 14,
@@ -136,7 +141,7 @@
       "<span color='#d79921'>▅</span>", // yellow
       "<span color='#d79921'>▆</span>", // yellow
       "<span color='#fe8019'>▇</span>", // orange
-      "<span color='#cc241d'>█</span>"  // red
+      "<span color='#cc241d'>█</span>" // red
     ],
     "interval": 1,
     "tooltip": true,
@@ -196,7 +201,8 @@
     "format-connected": "<span size='14pt' font='Material Icons'>bluetooth_connected</span>",
     "tooltip": true,
     "tooltip-format": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias} {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
     "on-click": "rfkill toggle bluetooth",
     "on-click-right": "blueman-manager"
   },
@@ -210,6 +216,12 @@
     "format": "{icon}",
     "format-muted": "<span size='14pt' font='Material Icons'>volume_off</span>",
     "format-icons": {
+      "headphone": "<span size='14pt' font='Material Icons'>headphones</span>",
+      // For my Airpods Pro (find your device name with `pactl list sinks`)
+      "bluez_output.70_AE_D5_BA_99_AB.1": "󱡏",
+      "hands-free": "<span size='14pt' font='Material Icons'>headset_mic</span>",
+      "headset": "<span size='14pt' font='Material Icons'>headphones</span>",
+      "headset-muted": "<span size='14pt' font='Material Icons'>headset_off</span>",
       "default": [
         "<span size='14pt' font='Material Icons'>volume_mute</span>",
         "<span size='14pt' font='Material Icons'>volume_down</span>",
@@ -218,13 +230,12 @@
     },
     "on-click-right": "pavucontrol",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    // If you want to use scroll to change brightness, comment the following lines
     "on-scroll-up": "",
     "on-scroll-down": "",
-    // And Uncomment the following line
     // "reverse-scrolling": true,
     "tooltip": true,
-    "tooltip-format": "Volume: {volume}%\n{desc}"
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "ignored-sinks": ["Easy Effects Sink"]
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
@@ -260,32 +271,18 @@
     "tooltip": false
   },
   "battery": {
-    "interval": 10,
+    "interval": 5,
     "states": {
       "warning": 20,
       "critical": 10,
       "plugordie": 5
     },
     "format": "{icon} {capacity}%",
-    "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": " {capacity}%",
     "format-plugged": "󰚥 {capacity}%",
-    "format-plugordie": "󰂃 {capacity}",
-    "tooltip": false,
-    "exec-on-event": true,
-    "exec-if-event": "state-warning, state-critical",
-    "exec": "~/.config/scripts/battery-notification.sh {capacity}"
+    "format-plugordie": "󰂃 {capacity}%",
+    "tooltip": false
   },
   "custom/power": {
     "format": "<span size='14pt' font='Material Icons'>power_settings_new</span>",

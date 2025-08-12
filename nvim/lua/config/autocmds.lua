@@ -8,8 +8,8 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- Autosave on insert leave and text change
-vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-  pattern = { "*" },
-  command = "silent! wall",
-  nested = true,
-})
+-- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+--   pattern = { "*" },
+--   command = "silent! wall",
+--   nested = true,
+-- })

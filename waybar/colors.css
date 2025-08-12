@@ -8,22 +8,22 @@ waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 @import url("colors.css");
  */
 
-@define-color cursor #C2BAC7;
+@define-color cursor #A29B9E;
 @define-color background #0E0F13;
 @define-color foreground #B6B8BC;
-@define-color color0  #3E3931;
+@define-color color0  #3F3833;
 @define-color color1  #5D626B;
-@define-color color2  #A26D77;
-@define-color color3  #677AB5;
-@define-color color4  #8AC3CF;
-@define-color color5  #CEBDD2;
-@define-color color6  #E9CF9D;
+@define-color color2  #94787D;
+@define-color color3  #788296;
+@define-color color4  #BB5F69;
+@define-color color5  #8E7E7F;
+@define-color color6  #8091AB;
 @define-color color7  #8E9197;
 @define-color color8  #63666A;
 @define-color color9  #5D626B;
-@define-color color10 #A26D77;
-@define-color color11 #677AB5;
-@define-color color12 #8AC3CF;
-@define-color color13 #CEBDD2;
-@define-color color14 #E9CF9D;
+@define-color color10 #94787D;
+@define-color color11 #788296;
+@define-color color12 #BB5F69;
+@define-color color13 #8E7E7F;
+@define-color color14 #8091AB;
 @define-color color15 #8E9197;
