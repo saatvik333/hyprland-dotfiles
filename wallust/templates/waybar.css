@@ -9,8 +9,8 @@ waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
  */
 
 @define-color cursor {{cursor}};
-@define-color background {{background}};
-@define-color foreground {{foreground}};
+@define-color background {{foreground}};
+@define-color foreground {{background}};
 @define-color color0  {{color0 }};
 @define-color color1  {{color1 }};
 @define-color color2  {{color2 }};

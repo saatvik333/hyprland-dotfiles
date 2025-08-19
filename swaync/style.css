@@ -1,11 +1,11 @@
-@import url("../waybar/colors.css");
+@import url("./colors.css");
 
 /* ===== VARIABLES ===== */
 * {
   --bg: @background;
   --fg: @foreground;
   --accent: @color6;
-  --accent2: @color3; 
+  --accent2: @color3;
   --swaync-bg: rgba(0, 0, 0, 0.5);
   --border-radius: 10px;
   --widget-padding: 8px;
@@ -20,6 +20,7 @@
   background: transparent;
   scrollbar-width: none;
   box-shadow: none;
+  color: var(--fg);
 }
 
 *::-webkit-scrollbar {
@@ -47,7 +48,7 @@ button {
 }
 
 .widget-mpris button {
-  color: white;
+  color: var(--fg);
 }
 
 /* Button hover states */
@@ -64,8 +65,6 @@ button:hover,
   background: var(--accent);
   color: var(--bg);
 }
-
-
 
 /* Hover text color inheritance */
 .widget-title > button:hover *,
@@ -177,15 +176,17 @@ button:hover * {
 /* ===== SPECIFIC WIDGET STYLES ===== */
 .widget-dnd label {
   font-size: 1.4em;
+  color: var(--fg);
 }
 
 .widget-mpris {
   padding-top: 26px;
   margin: 0px;
+  color: var(--fg);
 }
 
 .widget-mpris-title {
-  color: white;
+  color: var(--fg);
 }
 
 .widget-title > button {

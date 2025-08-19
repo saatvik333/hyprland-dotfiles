@@ -16,7 +16,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/common.sh"
 source "$(dirname "${BASH_SOURCE[0]}")/../lib/color-utils.sh"
 
 # --- Configuration ---
-readonly LUMINANCE_THRESHOLD=80
+readonly LUMINANCE_THRESHOLD=100
 readonly CROP_PERCENTAGE=5
 readonly WAYBAR_TEMPLATE="$HOME/.config/wallust/templates/waybar.css"
 readonly WAYBAR_STYLE="$HOME/.config/waybar/style.css"

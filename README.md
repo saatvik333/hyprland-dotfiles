@@ -8,6 +8,10 @@ This configuration provides a complete desktop environment built around Hyprland
 
 https://github.com/user-attachments/assets/d348e384-ef6b-4c0d-9aef-bea7f89104bc
 
+|Swaync | Waybar |
+|---------|-----------|
+| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c11ad43f-59d0-4dbf-b19f-f9a9a22727e3" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d101132d-b038-480f-8c3d-41a87a7c2952" />|
+
 ## Key Features
 
 ### Automated Theme Management
