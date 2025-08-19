@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/d348e384-ef6b-4c0d-9aef-bea7f89104bc
 
 ## Configuration Structure
 
-```
+```txt
 ~/.config/
 ├── hypr/           # Hyprland configuration
 ├── waybar/         # Status bar configuration
@@ -55,40 +55,14 @@ The configuration includes a modular script system organized by functionality:
 
 For detailed script documentation, see [`scripts/README.md`](scripts/README.md).
 
-## Customization
-
-### Theme Modification
-
-- Edit Wallust templates in `wallust/templates/`
-- Modify color mappings in theme scripts
-- Adjust application-specific configurations
-
-### Script Configuration
-
-- Update script constants for personal preferences
-- Modify notification settings and thresholds
-- Customize automation triggers and behaviors
-
-### Application Integration
-
-- Configure individual applications in their respective directories
-- Update environment variables in `shell.env`
-- Modify keybindings in Hyprland configuration
-
-## Contributing
-
-Contributions are welcome and appreciated. Please follow these guidelines:
-
-1. **Issues**: Report bugs or request features via GitHub issues
-2. **Pull Requests**: Ensure code follows existing patterns and includes documentation
-3. **Testing**: Test changes across different scenarios and configurations
-4. **Documentation**: Update relevant documentation for any changes
-
 ## License
 
 This configuration is provided as-is for educational and personal use. Individual components may have their own licenses.
 
 ---
 
-**Author**: saatvik333
-**Support**: Star the repository if you find it useful
+## Author
+
+**Maintainer:** [saatvik333](https://github.com/saatvik333)
+
+> If you find this project helpful, please consider starring the repository to show your support and help others discover it.

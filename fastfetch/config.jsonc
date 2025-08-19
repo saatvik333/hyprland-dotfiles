@@ -18,8 +18,8 @@
   },
   "display": {
     "bar": {
-      "charElapsed": "/",
-      "charTotal": "/",
+      "char.elapsed": "/",
+      "char.total": "/",
       "width": 20
     },
     "percent": {

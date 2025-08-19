@@ -10,18 +10,18 @@ window {
 #input {
     margin: 8px;
     padding: 10px 12px;
-    border: 2px solid #c16f78;
+    border: 2px solid #9aa6b7;
     border-radius: 8px;
     color: #B6B8BC;
-    background-color: rgba(63,56,51, 0.8);
+    background-color: rgba(50,51,54, 0.8);
     outline: none;
-    caret-color: #8E7E7F;
+    caret-color: #94C3D3;
     font-size: 14px;
 }
 
 #input:focus {
-    border-color: #8E7E7F;
-    box-shadow: 0 0 8px rgba(140,148,165, 0.3);
+    border-color: #94C3D3;
+    box-shadow: 0 0 8px rgba(136,149,163, 0.3);
 }
 
 #inner-box {
@@ -49,7 +49,7 @@ window {
 }
 
 #text:selected {
-    color: #8E7E7F;
+    color: #94C3D3;
     font-weight: bold;
 }
 
@@ -61,12 +61,12 @@ window {
 }
 
 #entry:hover {
-    background-color: rgba(140,148,165, 0.2);
+    background-color: rgba(136,149,163, 0.2);
 }
 
 #entry:selected {
-    background-color: rgba(140,148,165, 0.4);
-    box-shadow: 0 2px 6px rgba(140,148,165, 0.2);
+    background-color: rgba(136,149,163, 0.4);
+    box-shadow: 0 2px 6px rgba(136,149,163, 0.2);
 }
 
 #img {

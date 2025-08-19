@@ -4,8 +4,8 @@
   "position": "top",
   "spacing": 0,
   "margin": "8px 8px 0 8px",
-  "modules-left": ["custom/arch", "mpris", "hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center": ["clock", "mpris"],
   "modules-right": [
     "tray",
     "group/group-extras",
@@ -16,7 +16,8 @@
     "group/audio",
     "group/brightness",
     "battery",
-    "custom/power"
+    "custom/power",
+    "custom/notification"
   ],
   "group/group-extras": {
     "orientation": "inherit",
@@ -80,11 +81,10 @@
     "ignore-workspaces": ["scratch"]
   },
   "clock": {
-    "interval": 60,
-    "format": "{:%I:%M %p}",
+    "interval": 1,
+    "format": "{:%H:%M:%S %p}",
     "format-alt": "{:%a, %b %d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "on-click": "swaync-client -op"
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "mpris": {
     "format": "{player_icon} {status_icon}",
@@ -149,21 +149,21 @@
     "on-click": "alacritty -e btm"
   },
   "custom/menu": {
-    "format": "<span size='15pt' font='Material Icons'>menu_open</span>",
+    "format": "<span size='14pt' font='Material Symbols Outlined'>menu_open</span>",
     "tooltip": false
   },
   // "power-profiles-daemon": {
   //   "format": "{icon}",
   //   "tooltip": false,
   //   "format-icons": {
-  //     "performance": "<span size='12pt' font='Material Icons'>local_fire_department</span>",
-  //     "balanced": "<span size='12pt' font='Material Icons'>balance</span>",
-  //     "power-saver": "<span size='12pt' font='Material Icons'>eco</span>"
+  //     "performance": "<span size='14pt' font='Material Symbols Outlined'>local_fire_department</span>",
+  //     "balanced": "<span size='14pt' font='Material Symbols Outlined'>balance</span>",
+  //     "power-saver": "<span size='14pt' font='Material Symbols Outlined'>eco</span>"
   //   }
   // },
 
   "custom/updates": {
-    "format": "  {}",
+    "format": "<span size='14pt' font='Material Symbols Outlined'>package</span>",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/system/package-updates.sh",
@@ -173,32 +173,32 @@
   "network": {
     "format-icons": {
       "wifi": [
-        "<span size='12pt' font='Material Icons'>network_wifi_1_bar</span>",
-        "<span size='12pt' font='Material Icons'>network_wifi_2_bar</span>",
-        "<span size='12pt' font='Material Icons'>network_wifi_3_bar</span>",
-        "<span size='12pt' font='Material Icons'>signal_wifi_4_bar</span>"
+        "<span size='13pt' font='Material Symbols Outlined'>network_wifi_1_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>network_wifi_2_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>network_wifi_3_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>signal_wifi_4_bar</span>"
       ],
-      "ethernet": "<span size='12pt' font='Material Icons'>lan</span>",
-      "disabled": "<span size='12pt' font='Material Icons'>signal_wifi_off</span>",
-      "disconnected": "<span size='12pt' font='Material Icons'>signal_wifi_bad</span>"
+      "ethernet": "<span size='13pt' font='Material Symbols Outlined'>lan</span>",
+      "disabled": "<span size='13pt' font='Material Symbols Outlined'>signal_wifi_off</span>",
+      "disconnected": "<span size='13pt' font='Material Symbols Outlined'>signal_wifi_bad</span>"
     },
     "format-wifi": "{icon}",
-    "format-ethernet": "{icon} Wired",
+    "format-ethernet": "{icon}",
     "format-disconnected": "{icon}",
     "format-disabled": "{icon}",
     "interval": 5,
-    "tooltip-format": "{essid}\t{gwaddr}\n{bandwidthUpBytes} 󰁝\t{bandwidthDownBytes} 󰁅",
+    "tooltip-format": "{essid}\t{gwaddr}",
     "on-click": "rfkill toggle wifi",
-    "on-click-right": "alacritty -e nmtui",
+    "on-click-right": "~/.config/scripts/system/floating-run.sh 800 500 nmtui",
     "tooltip": true,
     "max-length": 20
   },
   "bluetooth": {
     "interval": 5,
-    "format-on": "<span size='14pt' font='Material Icons'></span>",
-    "format-off": "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>",
-    "format-disabled": "<span size='14pt' font='Material Icons'>bluetooth_disabled</span>",
-    "format-connected": "<span size='14pt' font='Material Icons'>bluetooth_connected</span>",
+    "format-on": "<span size='14pt' font='Material Symbols Outlined'>bluetooth</span>",
+    "format-off": "<span size='14pt' font='Material Symbols Outlined'>bluetooth_disabled</span>",
+    "format-disabled": "<span size='14pt' font='Material Symbols Outlined'>bluetooth_disabled</span>",
+    "format-connected": "<span size='14pt' font='Material Symbols Outlined'>bluetooth_connected</span>",
     "tooltip": true,
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
@@ -212,20 +212,20 @@
     "orientation": "horizontal"
   },
   "pulseaudio": {
-    "interval": 1,
+    "interval": 2,
     "format": "{icon}",
-    "format-muted": "<span size='14pt' font='Material Icons'>volume_off</span>",
+    "format-muted": "<span size='14pt' font='Material Symbols Outlined'>volume_off</span>",
     "format-icons": {
-      "headphone": "<span size='14pt' font='Material Icons'>headphones</span>",
-      // For my Airpods Pro (find your device name with `pactl list sinks`)
-      "bluez_output.70_AE_D5_BA_99_AB.1": "󱡏",
-      "hands-free": "<span size='14pt' font='Material Icons'>headset_mic</span>",
-      "headset": "<span size='14pt' font='Material Icons'>headphones</span>",
-      "headset-muted": "<span size='14pt' font='Material Icons'>headset_off</span>",
+      "headphone": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
+      // For my Airpods (find your device name with `pactl list sinks`)
+      "bluez_output.70_AE_D5_BA_99_AB.1": "<span size='13pt' font='Material Symbols Outlined'>earbuds_2</span>",
+      "hands-free": "<span size='14pt' font='Material Symbols Outlined'>headset_mic</span>",
+      "headset": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
+      "headset-muted": "<span size='14pt' font='Material Symbols Outlined'>headset_off</span>",
       "default": [
-        "<span size='14pt' font='Material Icons'>volume_mute</span>",
-        "<span size='14pt' font='Material Icons'>volume_down</span>",
-        "<span size='14pt' font='Material Icons'>volume_up</span>"
+        "<span size='14pt' font='Material Symbols Outlined'>volume_mute</span>",
+        "<span size='14pt' font='Material Symbols Outlined'>volume_down</span>",
+        "<span size='14pt' font='Material Symbols Outlined'>volume_up</span>"
       ]
     },
     "on-click-right": "pavucontrol",
@@ -239,8 +239,8 @@
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": "<span size='13.5pt' font='Material Icons'>mic</span>",
-    "format-source-muted": "<span size='13.5pt' font='Material Icons'>mic_off</span>",
+    "format-source": "<span size='14pt' font='Material Symbols Outlined'>mic</span>",
+    "format-source-muted": "<span size='14pt' font='Material Symbols Outlined'>mic_off</span>",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "tooltip": false
   },
@@ -254,13 +254,13 @@
     "device": "intel_backlight",
     "format": "{icon}",
     "format-icons": [
-      "<span size='12.5pt' font='Material Icons'>brightness_1</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_2</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_3</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_4</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_5</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_6</span>",
-      "<span size='12.5pt' font='Material Icons'>brightness_7</span>"
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_1</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_2</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_3</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_4</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_5</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_6</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_7</span>"
     ],
     // If you want to use scroll to change brightness, comment the following lines
     "on-scroll-up": "",
@@ -277,16 +277,44 @@
       "critical": 10,
       "plugordie": 5
     },
-    "format": "{icon} {capacity}%",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "format-charging": " {capacity}%",
-    "format-plugged": "󰚥 {capacity}%",
-    "format-plugordie": "󰂃 {capacity}%",
-    "tooltip": false
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_0</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_1</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_2</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_3</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_4</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_5</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_6</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_full</span>"
+    ],
+    "format-charging": "<span size='15pt' font='Material Symbols Outlined'>battery_android_bolt</span>",
+    "format-plugged": "<span size='15pt' font='Material Symbols Outlined'>bolt</span>",
+    "format-plugordie": "<span size='15pt' font='Material Symbols Outlined'>battery_android_alert</span>",
+    "tooltip": true,
+    "tooltip-format": "Charge: {capacity}%"
   },
   "custom/power": {
-    "format": "<span size='14pt' font='Material Icons'>power_settings_new</span>",
+    "format": "<span size='13pt' font='Material Symbols Outlined'>power_settings_new</span>",
     "on-click": "wlogout --protocol layer-shell -b 2",
     "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span size='14pt' font='Material Symbols Outlined'>notifications</span>",
+      "none": "<span size='14pt' font='Material Symbols Outlined'>notifications_none</span>",
+      "dnd-notification": "<span size='14pt' font='Material Symbols Outlined'>notifications_off</span>",
+      "dnd-none": "<span size='14pt' font='Material Symbols Outlined'>notifications_paused</span>",
+      "inhibited-notification": "<span size='14pt' font='Material Symbols Outlined'>notifications_off</span>",
+      "inhibited-none": "<span size='14pt' font='Material Symbols Outlined'>notifications_paused</span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

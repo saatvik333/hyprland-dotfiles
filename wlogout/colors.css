@@ -8,22 +8,22 @@ waybar = { src = "wlogout.css", dst = "~/.config/wlogout/colors.css" }
 @import url("colors.css");
  */
 
-@define-color cursor #A29B9E;
+@define-color cursor #A5BDC8;
 @define-color background #0E0F13;
 @define-color foreground #929396;
-@define-color color0  #3F3833;
+@define-color color0  #323336;
 @define-color color1  #5D626B;
-@define-color color2  #94787D;
-@define-color color3  #788296;
-@define-color color4  #BB5F69;
-@define-color color5  #8E7E7F;
-@define-color color6  #8091AB;
+@define-color color2  #758092;
+@define-color color3  #738393;
+@define-color color4  #8F9DB0;
+@define-color color5  #94C3D3;
+@define-color color6  #C1CBD9;
 @define-color color7  #8E9197;
 @define-color color8  #63666A;
 @define-color color9  #5D626B;
-@define-color color10 #94787D;
-@define-color color11 #788296;
-@define-color color12 #BB5F69;
-@define-color color13 #8E7E7F;
-@define-color color14 #8091AB;
+@define-color color10 #758092;
+@define-color color11 #738393;
+@define-color color12 #8F9DB0;
+@define-color color13 #94C3D3;
+@define-color color14 #C1CBD9;
 @define-color color15 #8E9197;

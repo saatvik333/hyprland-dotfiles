@@ -2,7 +2,7 @@
     color: #B6B8BC;
     background: #0E0F13;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .monitor {
@@ -14,9 +14,9 @@
 }
 
 .index {
-    color: #94787D;
+    color: #758092;
     background: #0E0F13;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 3px;
 }
 
@@ -27,5 +27,5 @@
 }
 
 .client_active {
-    border: 3px solid #8091AB;
+    border: 3px solid #C1CBD9;
 }

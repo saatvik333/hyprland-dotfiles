@@ -1,0 +1,323 @@
+@import url("../waybar/colors.css");
+
+/* ===== VARIABLES ===== */
+* {
+  --bg: @background;
+  --fg: @foreground;
+  --accent: @color6;
+  --accent2: @color3; 
+  --swaync-bg: rgba(0, 0, 0, 0.5);
+  --border-radius: 10px;
+  --widget-padding: 8px;
+  --notification-padding: 16px;
+  --button-border: 2px solid var(--fg);
+  --accent-border: 2px solid var(--accent);
+  --trough-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== GLOBAL RESETS ===== */
+* {
+  background: transparent;
+  scrollbar-width: none;
+  box-shadow: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.blank-window {
+  background: none;
+}
+
+/* ===== MIXINS (Common Patterns) ===== */
+/* Button base styles */
+.widget-title > button,
+.widget-buttons > flowbox > flowboxchild > button,
+.widget-mpris button,
+.notification-action,
+.notification-2fa-action,
+.close-button,
+button.toggle,
+button {
+  background: transparent;
+  color: var(--fg);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.widget-mpris button {
+  color: white;
+}
+
+/* Button hover states */
+.widget-title > button:hover,
+.widget-buttons > flowbox > flowboxchild > button:hover,
+.widget-mpris button:hover,
+.notification-action:hover,
+.notification-2fa-action:hover,
+.close-button:hover,
+button.toggle:hover,
+button.toggle.active,
+button:hover,
+.widget-menubar menuitem:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+
+
+/* Hover text color inheritance */
+.widget-title > button:hover *,
+.widget-buttons > flowbox > flowboxchild > button:hover *,
+.widget-mpris button:hover *,
+.notification-action:hover *,
+.notification-2fa-action:hover *,
+.close-button:hover *,
+button.toggle:hover *,
+button.toggle.active *,
+button:hover * {
+  color: var(--bg);
+}
+
+/* Scale/slider common styles */
+.widget-volume scale,
+.widget-backlight scale,
+.widget-slider scale,
+.per-app-volume scale {
+  border-radius: var(--border-radius);
+}
+
+.widget-volume scale trough,
+.widget-backlight scale trough,
+.widget-slider scale trough,
+.per-app-volume scale trough {
+  background: var(--trough-bg);
+  border-radius: var(--border-radius);
+}
+
+.widget-volume scale highlight,
+.widget-backlight scale highlight,
+.widget-slider scale highlight,
+.per-app-volume scale highlight,
+.widget-volume scale slider,
+.widget-backlight scale slider,
+.widget-slider scale slider,
+.per-app-volume scale slider {
+  background: var(--accent);
+  border-radius: var(--border-radius);
+}
+
+/* ===== LAYOUT CONTAINERS ===== */
+.control-center {
+  background: var(--swaync-bg);
+  padding: var(--widget-padding);
+  border: 0px solid var(--accent2);
+  border-radius: var(--border-radius);
+}
+
+.notification {
+  background: var(--swaync-bg);
+  border: 0px solid var(--accent);
+  padding: var(--notification-padding);
+  margin: 4px -2px;
+  border-radius: var(--border-radius);
+}
+
+.notification-row,
+.notification-content {
+  border-radius: var(--border-radius);
+}
+
+.notification:hover {
+  background: var(--swaync-bg);
+}
+
+/* ===== WIDGET CONTAINERS ===== */
+.widget-dnd,
+.widget-title,
+.widget-mpris,
+.widget-label,
+.widget-menubar,
+.widget-buttons,
+.widget-slider,
+.widget-volume,
+.widget-backlight,
+.widget-inhibitors {
+  background: var(--swaync-bg);
+  padding: var(--widget-padding);
+  margin-bottom: var(--widget-padding);
+  border-radius: var(--border-radius);
+}
+
+.widget-title {
+  background: transparent;
+}
+
+.widget-mpris {
+  background: transparent;
+}
+
+/* Child elements transparency */
+.widget-title > *,
+.widget-mpris > *,
+.widget-dnd > *,
+.widget-label > *,
+.widget-menubar > *,
+.widget-buttons > *,
+.widget-slider > *,
+.widget-volume > *,
+.widget-backlight > *,
+.widget-inhibitors > *,
+.notification > *,
+.control-center > * > * {
+  background: transparent;
+}
+
+/* ===== SPECIFIC WIDGET STYLES ===== */
+.widget-dnd label {
+  font-size: 1.4em;
+}
+
+.widget-mpris {
+  padding-top: 26px;
+  margin: 0px;
+}
+
+.widget-mpris-title {
+  color: white;
+}
+
+.widget-title > button {
+  padding: 4px 8px;
+  border: var(--button-border);
+}
+
+.widget-title > button:hover {
+  border: var(--accent-border);
+}
+
+.close-button {
+  transform: translate(6px, 0px);
+}
+
+.notification .close-button,
+.widget-title .close-button {
+  transform: translate(6px, 0px);
+}
+
+/* ===== SWITCHES ===== */
+.widget-dnd > switch {
+  background: var(--trough-bg);
+  border-radius: var(--border-radius);
+}
+
+.widget-dnd > switch:checked {
+  background: var(--accent2);
+}
+
+.widget-dnd > switch slider {
+  background: var(--fg);
+  border-radius: var(--border-radius);
+}
+
+/* ===== MENUS ===== */
+.widget-menubar menu {
+  background: var(--swaync-bg);
+  border-radius: var(--border-radius);
+}
+
+.widget-menubar menuitem {
+  background: transparent;
+  color: var(--fg);
+  border-radius: var(--border-radius);
+}
+
+/* ===== TOGGLE BUTTONS ===== */
+button.toggle {
+  border: var(--button-border);
+}
+
+button.toggle:hover,
+button.toggle.active {
+  border: var(--accent-border);
+}
+
+.notification-action,
+.notification-2fa-action {
+  border: var(--button-border);
+}
+
+.notification-action:hover,
+.notification-2fa-action:hover {
+  border: var(--accent-border);
+}
+
+/* ===== PROGRESS BARS ===== */
+progressbar {
+  background: transparent;
+  border-radius: var(--border-radius);
+  min-height: 12px;
+}
+
+progressbar trough {
+  background: var(--trough-bg);
+  border-radius: var(--border-radius);
+  min-height: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+progressbar progress {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: var(--border-radius);
+  min-height: 12px;
+  box-shadow: 0 0 8px rgba(var(--accent), 0.3);
+  border: 1px solid var(--accent);
+}
+
+/* Enhanced notification progress bars */
+.notification progressbar {
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.notification progressbar trough {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  min-height: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification progressbar progress {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 8px;
+  min-height: 14px;
+  box-shadow: 0 0 12px rgba(var(--accent), 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--accent);
+  animation: progress-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes progress-glow {
+  0% {
+    box-shadow: 0 0 12px rgba(var(--accent), 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(var(--accent), 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* ===== TEXT ELEMENTS ===== */
+label {
+  color: var(--fg);
+  background: transparent;
+}
+
+/* ===== ENTRY FIELDS ===== */
+entry {
+  background: var(--trough-bg);
+  color: var(--fg);
+  border-radius: var(--border-radius);
+}

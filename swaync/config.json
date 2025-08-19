@@ -1,0 +1,47 @@
+{
+  "cssPriority": "user",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-margin-top": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-left": 10,
+  "control-center-layer": "top",
+  "timeout": 5,
+  "timeout-low": 3,
+  "timeout-critical": 5,
+  "notification-window-width": 494,
+  "notification-window-height": -1,
+  "notification-grouping": true,
+  "notification-inline-replies": false,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "image-visibility": "when-avaliable",
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "",
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "script-fail-notify": true,
+  "notification-2fa-action": true,
+  "widgets": ["dnd", "mpris", "title", "notifications"],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "mpris": {
+      "blacklist": ["playerctld"],
+      "autohide": true,
+      "show-album-art": "always",
+      "loop-carousel": true
+    }
+  }
+}

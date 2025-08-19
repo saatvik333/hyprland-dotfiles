@@ -11,6 +11,6 @@ orientation=vertical
 content_halign=fill
 insensitive=true
 allow_images=true
-image_size=32
+image_size=36
 matching=fuzzy
 hide_scroll=true

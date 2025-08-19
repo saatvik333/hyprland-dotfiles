@@ -24,14 +24,14 @@ readonly SHOW_ALBUM_ART=false
 readonly SHOW_MUSIC_IN_VOLUME=true
 
 # Icons
-readonly VOLUME_MUTE_ICON="󰕿"
-readonly VOLUME_LOW_ICON="󰖀"
-readonly VOLUME_HIGH_ICON="󰕾"
-readonly MIC_MUTE_ICON="󰍭"
-readonly MIC_UNMUTE_ICON="󰍬"
-readonly BRIGHTNESS_LOW_ICON="󰃞"
-readonly BRIGHTNESS_MED_ICON="󰃟"
-readonly BRIGHTNESS_HIGH_ICON="󰃠"
+readonly VOLUME_MUTE_ICON="󰕿 "
+readonly VOLUME_LOW_ICON="󰖀 "
+readonly VOLUME_HIGH_ICON="󰕾 "
+readonly MIC_MUTE_ICON="󰍭 "
+readonly MIC_UNMUTE_ICON="󰍬 "
+readonly BRIGHTNESS_LOW_ICON="󰃞 "
+readonly BRIGHTNESS_MED_ICON="󰃟 "
+readonly BRIGHTNESS_HIGH_ICON="󰃠 "
 
 # Global variables
 album_art=""
@@ -74,13 +74,13 @@ show_volume_notification() {
     
     # Add current song if enabled
     if [[ "$SHOW_MUSIC_IN_VOLUME" == "true" ]]; then
-        local current_song
-        current_song=$(playerctl -f "{{title}} - {{artist}}" metadata 2>/dev/null || echo "")
-        if [[ -n "$current_song" ]]; then
-            body_text="$body_text  $current_song"
+        local current_media
+        current_media=$(playerctl -f "{{title}} - {{artist}}" metadata 2>/dev/null || echo "")
+        if [[ -n "$current_media" ]]; then
+            body_text="$body_text\n\n$current_media"
         fi
         
-        if [[ "$SHOW_ALBUM_ART" == "true" && -n "$current_song" ]]; then
+        if [[ "$SHOW_ALBUM_ART" == "true" && -n "$current_media" ]]; then
             get_album_art
         else
             album_art=""
@@ -90,9 +90,12 @@ show_volume_notification() {
     notify-send \
         --app-name="Volume" \
         --expire-time="$NOTIFICATION_TIMEOUT" \
+        --transient \
+        --hint="string:x-canonical-private-synchronous:volume" \
         --hint="string:x-dunst-stack-tag:volume_notif" \
         --hint="int:value:$progress_value" \
         --hint="string:hlcolor:#ffffff" \
+        --hint="string:category:volume" \
         --icon="$album_art" \
         "" "$body_text"
 }
@@ -125,6 +128,8 @@ show_mic_notification() {
     notify-send \
         --app-name="Microphone" \
         --expire-time="$NOTIFICATION_TIMEOUT" \
+        --transient \
+        --hint="string:x-canonical-private-synchronous:microphone" \
         --hint="string:x-dunst-stack-tag:mic_mute_notif" \
         "" "$mic_icon Microphone $status_text"
 }
@@ -155,8 +160,11 @@ show_brightness_notification() {
     notify-send \
         --app-name="Brightness" \
         --expire-time="$NOTIFICATION_TIMEOUT" \
+        --transient \
+        --hint="string:x-canonical-private-synchronous:brightness" \
         --hint="string:x-dunst-stack-tag:brightness_notif" \
         --hint="string:hlcolor:#ffffff" \
+        --hint="string:category:brightness" \
         --hint="int:value:$brightness" \
         "" "$brightness_icon $brightness%"
 }
@@ -205,6 +213,7 @@ show_music_notification() {
     notify-send \
         --app-name="Music Player" \
         --expire-time="$NOTIFICATION_TIMEOUT" \
+        --transient \
         --hint="string:x-dunst-stack-tag:music_notif" \
         --icon="$album_art" \
         "$summary" "$body"

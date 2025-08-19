@@ -18,9 +18,6 @@ source "$(dirname "${BASH_SOURCE[0]}")/../lib/color-utils.sh"
 # Short delay to ensure clean startup
 sleep 1
 
-# Kill Waytrogen after selecting wallpaper
-pkill waytrogen
-
 # --- Configuration ---
 readonly SCRIPT_NAME="${0##*/}"
 readonly CONFIG_DIR="$HOME/.config"
@@ -323,13 +320,18 @@ reload_hyprland_plugins() {
     fi
 }
 
+reload_swaync() {
+    swaync-client -rs
+}
+
 reload_system_components() {
     log_info "Reloading system components"
     
     # Reload components in order
     reload_hyprland
     # reload_waybar
-    restart_dunst
+    # restart_dunst
+    reload_swaync
     restart_hyprswitch
     reload_hyprland_plugins
     
@@ -372,12 +374,17 @@ main() {
     update_hyprlock_config "$hyprlock_wallpaper"
     execute_theme_scripts "$wallpaper"
     reload_system_components
+
     
     # Send completion notification
     send_notification "Theme Manager" "Theme Synchronization Complete" \
         "🎨 All system components updated successfully" "normal" "preferences-desktop-theme"
     
     log_success "Theme synchronization completed successfully"
+    
+    # Close waytrogen after successful theme synchronization
+    log_debug "Closing waytrogen wallpaper selector"
+    pkill waytrogen 2>/dev/null || true
 }
 
 # --- Script Entry Point ---

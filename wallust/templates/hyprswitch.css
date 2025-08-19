@@ -2,7 +2,7 @@
     color: {{foreground}};
     background: {{background}};
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .monitor {
@@ -16,7 +16,7 @@
 .index {
     color: {{color2}};
     background: {{background}};
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 3px;
 }
 
