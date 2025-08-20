@@ -25,7 +25,9 @@ scripts/
 │   ├── battery-notify.sh  # CronJob to notify for low-battery
 │   └── floating-run.sh    # Launch floating terminal applications
 └── utils/                 # Utility launchers and tools
-    └── util-launcher.sh   # Wofi-based emoji picker and utility launcher
+    ├── util-launcher.sh   # Wofi-based emoji picker and utility launcher
+    ├── screenshot.sh      # Advanced screenshot tool with grim/slurp
+    └── ss                 # Simple screenshot wrapper
 ```
 
 ## 🎨 Theme Management
@@ -159,6 +161,45 @@ scripts/
 - Easy copy-to-clipboard functionality
 - Wofi integration for smooth user experience
 
+### `utils/screenshot.sh` - Advanced Screenshot Tool
+
+**Purpose**: Feature-rich screenshot utility using grim and slurp
+
+**Usage**:
+
+```bash
+./scripts/utils/screenshot.sh [OPTIONS]
+./scripts/utils/ss [OPTIONS]  # Short wrapper
+```
+
+**Options**:
+
+- `-r, --region [fullscreen|workspace|selection]` - Screenshot region (default: selection)
+- `-h, --help` - Show help message
+
+**Features**:
+
+- Multiple capture modes (fullscreen, workspace, selection)
+- Automatic save to `~/Pictures/Screenshots/`
+- Clipboard integration (wl-copy/xclip)
+- Desktop notifications with preview and action buttons
+- Dependency checking
+- Error handling and validation
+- Fixed slurp overlay issue with proper timing
+
+**Examples**:
+
+```bash
+# Selection screenshot (default)
+./scripts/utils/ss
+
+# Fullscreen screenshot
+./scripts/utils/ss -r fullscreen
+
+# Current workspace screenshot
+./scripts/utils/ss -r workspace
+```
+
 ## 📚 Libraries
 
 ### `lib/common.sh` - Shared Utilities
@@ -193,8 +234,17 @@ scripts/
    ```
 
 3. **Music status** (for widgets):
+
    ```bash
    ./scripts/media/music-status.sh
+   ```
+
+4. **Take screenshots**:
+
+   ```bash
+   ./scripts/utils/ss                    # Selection
+   ./scripts/utils/ss -r fullscreen      # Fullscreen
+   ./scripts/utils/ss -r workspace       # Current workspace
    ```
 
 ## 🔧 Configuration

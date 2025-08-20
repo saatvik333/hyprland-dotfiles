@@ -5,7 +5,7 @@
   --bg: @background;
   --fg: @foreground;
   --accent: @color6;
-  --accent2: @color3;
+  --accent2: @color1;
   --swaync-bg: rgba(0, 0, 0, 0.5);
   --border-radius: 10px;
   --widget-padding: 8px;
@@ -116,11 +116,21 @@ button:hover * {
 }
 
 .notification {
-  background: var(--swaync-bg);
-  border: 0px solid var(--accent);
-  padding: var(--notification-padding);
+  background: linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--accent) 30%, black),
+    color-mix(in srgb, var(--accent2) 30%, black)
+  );
+  padding: 2px;
   margin: 4px -2px;
   border-radius: var(--border-radius);
+  border: 2px solid var(--accent);
+}
+
+.notification > * {
+  background: rgba(0, 0, 0, 0.7);
+  padding: calc(var(--notification-padding) - 2px);
+  border-radius: calc(var(--border-radius) - 2px);
 }
 
 .notification-row,

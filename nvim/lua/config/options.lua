@@ -15,3 +15,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
 vim.cmd.colorscheme = nil
 vim.opt.termguicolors = false
 vim.cmd("set t_Co=256")
+
+-- Ensure format on save is enabled
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
