@@ -48,17 +48,11 @@ alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.
 
 wofi = { src = 'wofi.css', dst = '~/.config/wofi/colors.css' }
 
-hypr = { src = 'hyprland.conf', dst = '~/.config/hypr/border.conf' }
-
 waybar = { src = 'waybar.css', dst = '~/.config/waybar/colors.css' }
 
 wlogout = { src = 'wlogout.css', dst = '~/.config/wlogout/colors.css' }
 
 kitty = { src = 'kitty.conf', dst = '~/.config/kitty/colors.conf' }
-
-gtk3 = { src = 'gtk.css', dst = '~/.config/gtk-3.0/colors.css' }
-
-gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 
 dunst = { src = 'dunstrc', dst = '~/.config/dunst/dunstrc' }
 

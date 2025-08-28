@@ -27,8 +27,7 @@ A modular and professional Hyprland configuration with clean organization and re
 
 - `general.conf` - Basic window behavior and system fixes
 - `floating.conf` - Applications that should float by default
-- `dialogs.conf` - Modal dialogs and file choosers
-- `media.conf` - Picture-in-Picture and media applications
+- `dialogs.conf` - Modal dialogs, Picture-in-Picture and file choosers
 - `opacity.conf` - Transparency settings for applications
 - `layers.conf` - Layer-specific visual effects and behavior
 
