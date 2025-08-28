@@ -7,9 +7,9 @@
 path=/home/saatvik333/Music
 version=3.4.1
 allowNotifications=1
-hideLogo=1
+hideLogo=0
 hideHelp=0
-lastVolume=100
+lastVolume=20
 
 # Cache: Set to 1 to use cache of the music library directory tree for faster startup times.
 cacheLibrary=-1
@@ -31,7 +31,7 @@ saveRepeatShuffleSettings=1
 
 repeatState=0
 
-shuffleEnabled=0
+shuffleEnabled=1
 
 # Set the window title to the title of the currently playing track
 trackTitleAsWindowTitle=1
@@ -39,7 +39,7 @@ trackTitleAsWindowTitle=1
 
 [visualizer]
 
-visualizerEnabled=1
+visualizerEnabled=0
 visualizerHeight=6
 visualizerBrailleMode=0
 
@@ -58,14 +58,14 @@ visualizerBarWidth=2
 # Be sure to have the actual uncommented values last.
 # For instance use the below values for a pill muncher mode:
 
-#progressBarElapsedEvenChar=
-#progressBarElapsedOddChar=
+#progressBarElapsedEvenChar= 
+#progressBarElapsedOddChar= 
 #progressBarApproachingEvenChar=•
 #progressBarApproachingOddChar=·
 #progressBarCurrentEvenChar=ᗧ
 #progressBarCurrentOddChar=ᗧ
 
-# To have a thick line:
+# To have a thick line: 
 
 #progressBarElapsedEvenChar=━
 #progressBarElapsedOddChar=━
@@ -74,16 +74,16 @@ visualizerBarWidth=2
 #progressBarCurrentEvenChar=━
 #progressBarCurrentOddChar=━
 
-# To have dots (the original):
+# To have dots (the original): 
 
 #progressBarElapsedEvenChar=■
-#progressBarElapsedOddChar=
+#progressBarElapsedOddChar= 
 #progressBarApproachingEvenChar==
-#progressBarApproachingOddChar=
+#progressBarApproachingOddChar= 
 #progressBarCurrentEvenChar=■
-#progressBarCurrentOddChar=
+#progressBarCurrentOddChar= 
 
-# Current values:
+# Current values: 
 
 progressBarElapsedEvenChar=━
 progressBarElapsedOddChar=━

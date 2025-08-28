@@ -18,13 +18,8 @@
 /* ===== GLOBAL RESETS ===== */
 * {
   background: transparent;
-  scrollbar-width: none;
   box-shadow: none;
   color: var(--fg);
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 .blank-window {

@@ -19,6 +19,7 @@ window#waybar {
 /* ======================= */
 #custom-arch:hover,
 #custom-updates:hover,
+#idle_inhibitor:hover,
 #power-profiles-daemon:hover,
 #network:hover,
 #bluetooth:hover,
@@ -35,10 +36,9 @@ window#waybar {
 /* ======================= */
 #custom-arch {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 14px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -62,8 +62,7 @@ window#waybar {
 
 #workspaces button.active {
   color: @foreground;
-  /* border: solid 2px @foreground; */
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.urgent {
@@ -83,10 +82,9 @@ window#waybar {
 #clock {
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   font-weight: 500;
   min-height: 30px;
 }
@@ -96,28 +94,28 @@ window#waybar {
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   min-height: 30px;
 }
 
 #mpris.playing {
   color: #8ec07c;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #mpris.paused {
   color: #d79921;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #mpris.stopped {
   color: #cc241d;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #custom-monitors {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -126,7 +124,7 @@ window#waybar {
 
 #cpu {
   color: @color14;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -137,10 +135,9 @@ window#waybar {
 /* System Indicators       */
 /* ======================= */
 #tray {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -164,10 +161,9 @@ window#waybar {
 
 #custom-menu {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -178,7 +174,7 @@ tooltip class {
 
 #custom-updates {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   /* border: solid 2px @textcolor; */
@@ -204,12 +200,25 @@ tooltip class {
   background: rgba(255, 0, 0, 0.1);
 }
 
-#power-profiles-daemon {
+#idle_inhibitor {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
+  border-radius: 10px;
+  min-height: 30px;
+}
+
+#idle_inhibitor.activated {
+  color: #d79921;
+  background: rgba(255, 255, 0, 0.1);
+}
+
+#power-profiles-daemon {
+  color: @foreground;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0 12px;
+  margin: 0 4px;
   border-radius: 10px;
   min-height: 30px;
 }
@@ -237,20 +246,18 @@ tooltip class {
 /* ======================= */
 #network {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
 
 #bluetooth {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -273,10 +280,9 @@ tooltip class {
 
 #pulseaudio {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -289,8 +295,7 @@ tooltip class {
 
 #pulseaudio.microphone {
   color: @foreground;
-  /* border: solid 2px @foreground; */
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #pulseaudio.microphone.source-muted {
@@ -300,7 +305,7 @@ tooltip class {
 }
 
 #pulseaudio-slider {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -331,16 +336,15 @@ tooltip class {
 /* ======================= */
 #backlight {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
 
 #backlight-slider {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -357,7 +361,7 @@ tooltip class {
   min-height: 8px;
   min-width: 100px;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 #backlight-slider highlight {
   min-width: 8px;
@@ -371,10 +375,9 @@ tooltip class {
 /* ======================= */
 #battery {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }
@@ -401,7 +404,7 @@ tooltip class {
 /* ======================= */
 #custom-notification {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0 12px;
   margin: 0 4px;
   border-radius: 10px;
@@ -410,13 +413,13 @@ tooltip class {
 
 #custom-notification.notification {
   color: #d79921;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #custom-notification.dnd-notification,
 #custom-notification.inhibited-notification {
   color: #cc241d;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ======================= */
@@ -424,10 +427,9 @@ tooltip class {
 /* ======================= */
 #custom-power {
   color: @foreground;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   margin: 0 4px;
   padding: 0 12px;
-  /* border: solid 2px @foreground; */
   border-radius: 10px;
   min-height: 30px;
 }

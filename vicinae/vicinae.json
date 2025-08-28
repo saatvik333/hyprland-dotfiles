@@ -8,6 +8,8 @@
         "searchFiles": false
     },
     "theme": {
+        "iconTheme": "Papirus-Dark",
+        "name": "vicinae-dark"
     },
     "window": {
         "csd": true,

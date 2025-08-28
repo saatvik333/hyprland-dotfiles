@@ -4,28 +4,28 @@ css = { src = "wofi.css", dst = "~/.config/wofi/colors.css" }
  */
 
 :root {
-    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Everforest/everforest-flowers.png");
+    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Nord/nord-death-star.png");
 
     /* Special */
-    --background: #151416;
-    --foreground: #BFBDC0;
-    --cursor: #B3B1AC;
+    --background: #0E0F13;
+    --foreground: #B6B8BC;
+    --cursor: #A5BDC8;
 
     /* Colors */
-    --color0:  #504D49;
-    --color1:  #716D74;
-    --color2:  #A27474;
-    --color3:  #7D8078;
-    --color4:  #BE8877;
-    --color5:  #A8A597;
-    --color6:  #FAE8D2;
-    --color7:  #9B989D;
-    --color8:  #6C6A6E;
-    --color9:  #716D74;
-    --color10: #A27474;
-    --color11: #7D8078;
-    --color12: #BE8877;
-    --color13: #A8A597;
-    --color14: #FAE8D2;
-    --color15: #9B989D;
+    --color0:  #323336;
+    --color1:  #5D626B;
+    --color2:  #758092;
+    --color3:  #738393;
+    --color4:  #8F9DB0;
+    --color5:  #94C3D3;
+    --color6:  #C1CBD9;
+    --color7:  #8E9197;
+    --color8:  #63666A;
+    --color9:  #5D626B;
+    --color10: #758092;
+    --color11: #738393;
+    --color12: #8F9DB0;
+    --color13: #94C3D3;
+    --color14: #C1CBD9;
+    --color15: #8E9197;
 }

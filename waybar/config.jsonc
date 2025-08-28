@@ -26,7 +26,7 @@
       "children-class": "extras",
       "transition-left-to-right": false
     },
-    "modules": ["custom/menu", "cpu", "custom/updates"]
+    "modules": ["custom/menu", "cpu", "custom/updates", "idle_inhibitor"]
   },
   "group/brightness": {
     "orientation": "inherit",
@@ -96,10 +96,11 @@
     },
     "player-icons": {
       "default": "󱜏",
-      "spotify_player": "",
-      "spotify": "",
+      "spotify_player": "󰓇",
+      "spotify": "󰓇",
+      "kew": "󰝚",
       "firefox": "󰺕",
-      "chrome": "",
+      "chrome": "",
       "vlc": "󰕼"
     },
     "return-type": "json",
@@ -148,6 +149,17 @@
     "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
     "on-click": "alacritty -e btm"
   },
+  "idle_inhibitor": {
+    "timeout": 10,
+    "tooltip": true,
+    "tooltip-format-activated": "Idle Inhibittor On",
+    "tooltip-format-deactivated": "Idle Inhibittor Off",
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "<span size='14pt' font='Material Symbols Outlined'>bedtime_off</span>",
+      "deactivated": "<span size='14pt' font='Material Symbols Outlined'>bedtime</span>"
+    }
+  },
   "custom/menu": {
     "format": "<span size='14pt' font='Material Symbols Outlined'>menu_open</span>",
     "tooltip": false
@@ -189,7 +201,7 @@
     "interval": 5,
     "tooltip-format": "{essid}\t{gwaddr}",
     "on-click": "rfkill toggle wifi",
-    "on-click-right": "~/.config/scripts/system/floating-run.sh 800 500 nmtui",
+    "on-click-right": "nmgui",
     "tooltip": true,
     "max-length": 20
   },
@@ -217,18 +229,21 @@
     "format-muted": "<span size='14pt' font='Material Symbols Outlined'>volume_off</span>",
     "format-icons": {
       "headphone": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
-      // For my Airpods (find your device name with `pactl list sinks`)
+      // For my Bluetooth speaker (find your device name with `pactl list sinks`)
+      "bluez_output.F4_4E_FC_44_F7_CF.1": "<span size='14pt' font='Material Symbols Outlined'>speaker</span>",
+      // For my Airpods
       "bluez_output.70_AE_D5_BA_99_AB.1": "<span size='13pt' font='Material Symbols Outlined'>earbuds_2</span>",
       "hands-free": "<span size='14pt' font='Material Symbols Outlined'>headset_mic</span>",
       "headset": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
       "headset-muted": "<span size='14pt' font='Material Symbols Outlined'>headset_off</span>",
       "default": [
+        //
         "<span size='14pt' font='Material Symbols Outlined'>volume_mute</span>",
         "<span size='14pt' font='Material Symbols Outlined'>volume_down</span>",
         "<span size='14pt' font='Material Symbols Outlined'>volume_up</span>"
       ]
     },
-    "on-click-right": "pavucontrol",
+    "on-click-right": "pavucontrol -t 3",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "",
     "on-scroll-down": "",
@@ -242,6 +257,7 @@
     "format-source": "<span size='14pt' font='Material Symbols Outlined'>mic</span>",
     "format-source-muted": "<span size='14pt' font='Material Symbols Outlined'>mic_off</span>",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol -t 4",
     "tooltip": false
   },
   "backlight/slider": {
