@@ -5,7 +5,7 @@
 }
 
 window {
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
 button {
@@ -34,27 +34,23 @@ button:hover {
 #lock {
 	background-color: @color2;
 	background-image: image(url("icons/lock.png"));
-	border-radius: 20px 0px 0px 0px;
 	margin: 30px 0px 0px 400px;
 }
 
 #reboot {
 	background-color: @color3;
 	background-image: image(url("icons/reboot.png"));
-	border-radius: 0px 0px 0px 20px;
 	margin: 0px 0px 30px 400px;
 }
 
 #logout {
 	background-color: @color5;
 	background-image: image(url("icons/logout.png"));
-	border-radius: 0px 20px 0px 0px;
 	margin: 30px 400px 0px 0px;
 }
 
 #shutdown {
 	background-color: @color9;
 	background-image: image(url("icons/shutdown.png"));
-	border-radius: 0px 0px 20px 0px;
 	margin: 0px 400px 30px 0px;
 }

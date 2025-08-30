@@ -1,9 +1,13 @@
 /* ~/.config/wofi/style.css - Auto-generated from colors.css */
 
+* {
+    border-radius: 0px;
+}
+
 window {
+    border: 2px solid #8895a3;
     margin: 5px;
-    border-radius: 8px;
-    background-color: rgba(14,15,19, 0.9);
+    background-color: rgba(14,15,19, 1);
     font-family: "Liga SFMono Nerd Font", monospace;
 }
 
@@ -11,7 +15,6 @@ window {
     margin: 8px;
     padding: 10px 12px;
     border: 2px solid #9aa6b7;
-    border-radius: 8px;
     color: #B6B8BC;
     background-color: rgba(50,51,54, 0.8);
     outline: none;
@@ -56,7 +59,6 @@ window {
 #entry {
     padding: 8px;
     margin: 2px 5px;
-    border-radius: 8px;
     transition: all 0.2s ease;
 }
 

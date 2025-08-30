@@ -22,7 +22,7 @@ add_newline = false
 # Directory configuration
 [directory]
 format = "[ $path ]($style)[$read_only]($read_only_style)"
-read_only = "󰌾 "
+read_only = "read-only"
 truncation_length = 3
 fish_style_pwd_dir_length = 1
 home_symbol = "~"
@@ -30,8 +30,8 @@ home_symbol = "~"
 # Character at prompt
 [character]
 success_symbol = "[\\$](bold green)"
-error_symbol = "[](bold red)"
-vimcmd_symbol ="[](bold green)"
+error_symbol = "[X](bold red)"
+vimcmd_symbol ="[V](bold green)"
 
 # Username display
 [username]
@@ -42,7 +42,7 @@ show_always = true
 # Hostname for SSH
 [hostname]
 ssh_only = true
-ssh_symbol = ""
+ssh_symbol = "ssh"
 format = "[$hostname ]($style)"
 style = "bg:#A94744 fg:#0D1017"
 disabled = false
@@ -54,112 +54,112 @@ format = '[ $time ]($style)'
 use_12hr = true
 
 [aws]
-symbol = "󰅟 "
+symbol = "aws "
 
 [buf]
-symbol = " "
+symbol = "buf "
 
 [c]
-symbol = " "
+symbol = "c "
 
 [cmake]
-symbol = " "
+symbol = "cmake "
 
 [conda]
-symbol = " "
+symbol = "conda "
 
 [crystal]
-symbol = " "
+symbol = "crystal "
 
 [dart]
-symbol = " "
+symbol = "dart "
 
 [docker_context]
-symbol = " "
+symbol = "docker "
 
 [elixir]
-symbol = " "
+symbol = "elixir "
 
 [elm]
-symbol = " "
+symbol = "elm "
 
 [fossil_branch]
-symbol = " "
+symbol = "fossil "
 
 [git_branch]
-symbol = " "
+symbol = "git "
 
 [git_commit]
-tag_symbol = " "
+tag_symbol = "commit "
 
 [golang]
-symbol = " "
+symbol = "go "
 
 [guix_shell]
-symbol = " "
+symbol = "guix "
 
 [haskell]
-symbol = " "
+symbol = "haskell "
 
 [hg_branch]
-symbol = " "
+symbol = "hg "
 
 [java]
-symbol = " "
+symbol = "java "
 
 [julia]
-symbol = " "
+symbol = "julia "
 
 [kotlin]
-symbol = " "
+symbol = "kotlin "
 
 [lua]
-symbol = " "
+symbol = "lua "
 
 [meson]
-symbol = "󰔷 "
+symbol = "meson "
 
 [nim]
-symbol = "󰆥 "
+symbol = "nim "
 
 [nix_shell]
-symbol = " "
+symbol = "nix "
 
 [nodejs]
-symbol = "󰎙 "
+symbol = "node "
 
 [ocaml]
-symbol = " "
+symbol = "ocaml "
 
 [package]
-symbol = "󰏗 "
+symbol = "package "
 
 [perl]
-symbol = " "
+symbol = "perl "
 
 [php]
-symbol = " "
+symbol = "php "
 
 [pijul_channel]
-symbol = " "
+symbol = "pijul "
 
 [python]
-symbol = " "
+symbol = "python "
 
 [ruby]
-symbol = " "
+symbol = "ruby "
 
 [rust]
-symbol = "󱘗 "
+symbol = "rust "
 
 [scala]
-symbol = " "
+symbol = "scala "
 
 [swift]
-symbol = " "
+symbol = "swift "
 
 [zig]
-symbol = " "
+symbol = "zig "
 
 [gradle]
-symbol = " "
+symbol = "gradle "

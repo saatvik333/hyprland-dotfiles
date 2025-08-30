@@ -3,11 +3,11 @@
 /* Global Styles           */
 /* ======================= */
 * {
-  border: none;
+  border-radius: 0;
   font-family: "SF Pro";
   font-size: 16px;
   box-shadow: none;
-  min-width: 28px;
+  min-width: 32px;
 }
 
 window#waybar {
@@ -18,9 +18,9 @@ window#waybar {
 /* Interactive States      */
 /* ======================= */
 #custom-arch:hover,
+#clock:hover,
 #custom-updates:hover,
 #idle_inhibitor:hover,
-#power-profiles-daemon:hover,
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
@@ -36,33 +36,28 @@ window#waybar {
 /* ======================= */
 #custom-arch {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
   padding: 0 14px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  margin-left: 2px;
+  min-height: 32px;
 }
 
 /* ======================= */
 /* Workspace Management    */
 /* ======================= */
 #workspaces {
-  margin: 0;
   padding: 0;
 }
 
 #workspaces button {
   color: @color1;
   padding: 0 8px;
-  margin: 0 4px;
-  /* border: solid 2px transparent; */
-  border-radius: 10px;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 #workspaces button.active {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #workspaces button.urgent {
@@ -72,7 +67,7 @@ window#waybar {
 
 @keyframes blink {
   50% {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 }
 
@@ -80,75 +75,63 @@ window#waybar {
 /* System Components       */
 /* ======================= */
 #clock {
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
+  padding: 0 10px;
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
   font-weight: 500;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 #mpris {
   color: @foreground;
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  min-height: 30px;
+  padding: 0 10px;
+  background: @background;
+  min-height: 32px;
 }
 
 #mpris.playing {
   color: #8ec07c;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #mpris.paused {
   color: #d79921;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #mpris.stopped {
   color: #cc241d;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #custom-monitors {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #cpu {
   color: @color14;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 /* ======================= */
 /* System Indicators       */
 /* ======================= */
 #tray {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #privacy {
-  background: rgba(255, 255, 0, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
+  background: @background;
+  padding: 0 10px;
   /* border: solid 2px #d79921; */
-  border-radius: 10px;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 #privacy-item {
@@ -161,11 +144,9 @@ window#waybar {
 
 #custom-menu {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 tooltip class {
@@ -174,71 +155,65 @@ tooltip class {
 
 #custom-updates {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
+  background: @background;
+  padding: 0 10px;
   /* border: solid 2px @textcolor; */
-  border-radius: 10px;
-  min-height: 30px;
+  min-height: 32px;
 }
 
 /* Green class - no updates or low count */
 #custom-updates.green {
   color: #8ec07c;
-  background: rgba(0, 255, 0, 0.1);
+  background: @background;
 }
 
 /* Yellow class - moderate updates */
 #custom-updates.yellow {
   color: #d79921;
-  background: rgba(255, 255, 0, 0.1);
+  background: @background;
 }
 
 /* Red class - many updates */
 #custom-updates.red {
   color: #cc241d;
-  background: rgba(255, 0, 0, 0.1);
+  background: @background;
 }
 
 #idle_inhibitor {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #idle_inhibitor.activated {
   color: #d79921;
-  background: rgba(255, 255, 0, 0.1);
+  background: @background;
 }
 
 #power-profiles-daemon {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #power-profiles-daemon.performance {
   color: #cc241d;
   /* border: solid 2px #cc241d; */
-  background: rgba(255, 0, 0, 0.1);
+  background: @background;
 }
 
 #power-profiles-daemon.balanced {
   color: #d79921;
   /* border: solid 2px #d79921; */
-  background: rgba(255, 255, 0, 0.1);
+  background: @background;
 }
 
 #power-profiles-daemon.power-saver {
   color: #8ec07c;
   /* border: solid 2px #8ec07c; */
-  background: rgba(0, 255, 0, 0.1);
+  background: @background;
 }
 
 /* ======================= */
@@ -246,32 +221,28 @@ tooltip class {
 /* ======================= */
 #network {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #bluetooth {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #network.disabled {
   color: #cc241d;
   /* border: solid 2px #cc241d; */
-  background: rgba(255, 0, 0, 0.1);
+  background: @background;
 }
 
 #bluetooth.disabled {
   color: #458588;
   /* border: solid 2px #458588; */
-  background: rgba(0, 0, 255, 0.1);
+  background: @background;
 }
 
 /* ======================= */
@@ -280,36 +251,32 @@ tooltip class {
 
 #pulseaudio {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #pulseaudio.sink-muted {
   color: #d79921;
   /* border: solid 2px #d79921; */
-  background: rgba(255, 255, 0, 0.1);
+  background: @background;
 }
 
 #pulseaudio.microphone {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #pulseaudio.microphone.source-muted {
   color: #cc241d;
   /* border: solid 2px #cc241d; */
-  background: rgba(255, 0, 0, 0.1);
+  background: @background;
 }
 
 #pulseaudio-slider {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #pulseaudio-slider slider {
@@ -321,13 +288,10 @@ tooltip class {
 #pulseaudio-slider trough {
   min-height: 8px;
   min-width: 100px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 #pulseaudio-slider highlight {
   min-width: 8px;
   min-height: 8px;
-  border-radius: 4px;
   background: @color6;
 }
 
@@ -336,19 +300,15 @@ tooltip class {
 /* ======================= */
 #backlight {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #backlight-slider {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #backlight-slider slider {
@@ -360,13 +320,10 @@ tooltip class {
 #backlight-slider trough {
   min-height: 8px;
   min-width: 100px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
 }
 #backlight-slider highlight {
   min-width: 8px;
   min-height: 8px;
-  border-radius: 4px;
   background: @color2;
 }
 
@@ -375,11 +332,9 @@ tooltip class {
 /* ======================= */
 #battery {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 #battery.plugged,
@@ -404,22 +359,21 @@ tooltip class {
 /* ======================= */
 #custom-notification {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0 12px;
-  margin: 0 4px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
+  margin-right: 2px;
 }
 
 #custom-notification.notification {
   color: #d79921;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 #custom-notification.dnd-notification,
 #custom-notification.inhibited-notification {
   color: #cc241d;
-  background: rgba(255, 255, 255, 0.1);
+  background: @background;
 }
 
 /* ======================= */
@@ -427,25 +381,21 @@ tooltip class {
 /* ======================= */
 #custom-power {
   color: @foreground;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 4px;
-  padding: 0 12px;
-  border-radius: 10px;
-  min-height: 30px;
+  background: @background;
+  padding: 0 10px;
+  min-height: 32px;
 }
 
 /* ======================== */
 /* Tooltip                  */
 /* ======================== */
 tooltip {
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  color: @foreground;
+  background: @background;
 }
 
 tooltip * {
-  color: rgba(255, 255, 255, 0.8);
+  color: @foreground;
   text-shadow: none;
-  background: transparent;
-  margin: 2px;
+  background: @background;
 }

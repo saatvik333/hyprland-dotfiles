@@ -4,15 +4,21 @@
 * {
   --bg: @background;
   --fg: @foreground;
-  --accent: @color6;
-  --accent2: @color1;
-  --swaync-bg: rgba(0, 0, 0, 0.5);
-  --border-radius: 10px;
+  --color0: @color0;
+  --color1: @color1;
+  --color2: @color2;
+  --color3: @color3;
+  --color4: @color4;
+  --color5: @color5;
+  --color6: @color6;
+  --color7: @color7;
+  --swaync-bg: var(--bg);
+  --border-radius: 0px;
   --widget-padding: 8px;
   --notification-padding: 16px;
   --button-border: 2px solid var(--fg);
-  --accent-border: 2px solid var(--accent);
-  --trough-bg: rgba(255, 255, 255, 0.1);
+  --color6-border: 2px solid var(--color5);
+  --trough-bg: var(--fg);
 }
 
 /* ===== GLOBAL RESETS ===== */
@@ -20,6 +26,7 @@
   background: transparent;
   box-shadow: none;
   color: var(--fg);
+  border-radius: var(--border-radius);
 }
 
 .blank-window {
@@ -57,7 +64,7 @@ button.toggle:hover,
 button.toggle.active,
 button:hover,
 .widget-menubar menuitem:hover {
-  background: var(--accent);
+  background: var(--color3);
   color: var(--bg);
 }
 
@@ -98,7 +105,7 @@ button:hover * {
 .widget-backlight scale slider,
 .widget-slider scale slider,
 .per-app-volume scale slider {
-  background: var(--accent);
+  background: var(--color4);
   border-radius: var(--border-radius);
 }
 
@@ -106,35 +113,33 @@ button:hover * {
 .control-center {
   background: var(--swaync-bg);
   padding: var(--widget-padding);
-  border: 0px solid var(--accent2);
+  border: 3px solid;
   border-radius: var(--border-radius);
+  border-image: linear-gradient(90deg, var(--color3), var(--color4), var(--color5), var(--color6), var(--color2)) 1;
 }
 
 .notification {
-  background: linear-gradient(
-    45deg,
-    color-mix(in srgb, var(--accent) 30%, black),
-    color-mix(in srgb, var(--accent2) 30%, black)
-  );
+  background: var(--swaync-bg);
   padding: 2px;
   margin: 4px -2px;
   border-radius: var(--border-radius);
-  border: 2px solid var(--accent);
+  border: 3px solid var(--color6);
+  border-image: linear-gradient(90deg, var(--color5), var(--color6), var(--color2)) 1;
+}
+
+.control-center .notification {
+  border: 3px solid var(--color1);
 }
 
 .notification > * {
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--bg);
   padding: calc(var(--notification-padding) - 2px);
-  border-radius: calc(var(--border-radius) - 2px);
+  border-radius: var(--border-radius);
 }
 
 .notification-row,
 .notification-content {
   border-radius: var(--border-radius);
-}
-
-.notification:hover {
-  background: var(--swaync-bg);
 }
 
 /* ===== WIDGET CONTAINERS ===== */
@@ -184,14 +189,13 @@ button:hover * {
   color: var(--fg);
 }
 
+.widget-mpris * {
+  color: #ffffff;
+}
+
 .widget-mpris {
   padding-top: 26px;
   margin: 0px;
-  color: var(--fg);
-}
-
-.widget-mpris-title {
-  color: var(--fg);
 }
 
 .widget-title > button {
@@ -200,7 +204,7 @@ button:hover * {
 }
 
 .widget-title > button:hover {
-  border: var(--accent-border);
+  border: 2px solid var(--color3);
 }
 
 .close-button {
@@ -214,16 +218,16 @@ button:hover * {
 
 /* ===== SWITCHES ===== */
 .widget-dnd > switch {
-  background: var(--trough-bg);
+  background: var(--color6);
   border-radius: var(--border-radius);
 }
 
 .widget-dnd > switch:checked {
-  background: var(--accent2);
+  background: var(--color3);
 }
 
 .widget-dnd > switch slider {
-  background: var(--fg);
+  background: var(--color4);
   border-radius: var(--border-radius);
 }
 
@@ -246,7 +250,7 @@ button.toggle {
 
 button.toggle:hover,
 button.toggle.active {
-  border: var(--accent-border);
+  border: 2px solid var(--color5);
 }
 
 .notification-action,
@@ -256,7 +260,7 @@ button.toggle.active {
 
 .notification-action:hover,
 .notification-2fa-action:hover {
-  border: var(--accent-border);
+  border: 2px solid var(--color2);
 }
 
 /* ===== PROGRESS BARS ===== */
@@ -266,21 +270,6 @@ progressbar {
   min-height: 12px;
 }
 
-progressbar trough {
-  background: var(--trough-bg);
-  border-radius: var(--border-radius);
-  min-height: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-progressbar progress {
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  border-radius: var(--border-radius);
-  min-height: 12px;
-  box-shadow: 0 0 8px rgba(var(--accent), 0.3);
-  border: 1px solid var(--accent);
-}
-
 /* Enhanced notification progress bars */
 .notification progressbar {
   min-height: 14px;
@@ -288,31 +277,16 @@ progressbar progress {
 }
 
 .notification progressbar trough {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  background: var(--fg);
+  border-radius: 0px;
   min-height: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid var(--fg);
 }
 
 .notification progressbar progress {
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  border-radius: 8px;
+  background: var(--color6);
+  border-radius: 0px;
   min-height: 14px;
-  box-shadow: 0 0 12px rgba(var(--accent), 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border: 1px solid var(--accent);
-  animation: progress-glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes progress-glow {
-  0% {
-    box-shadow: 0 0 12px rgba(var(--accent), 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 16px rgba(var(--accent), 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  }
 }
 
 /* ===== TEXT ELEMENTS ===== */

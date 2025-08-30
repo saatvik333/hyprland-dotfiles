@@ -1,0 +1,19 @@
+{
+	"version": "1.0.0",
+	"appearance": "automatic",
+	"icon": "./logo.png",
+	"name": "Wallustic",
+	"description": "Wallust generated palette theme",
+	"palette": {
+	  "background": "#0E0F13",
+	  "foreground": "#B6B8BC",
+	  "blue": "#323336",
+	  "green": "#5D626B",
+	  "magenta": "#758092",
+	  "orange": "#738393",
+	  "purple": "#8F9DB0",
+	  "red": "#94C3D3",
+	  "yellow": "#C1CBD9",
+	  "cyan": "#8E9197"
+	}
+}

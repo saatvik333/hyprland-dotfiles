@@ -36,9 +36,9 @@ declare -rA DEFAULT_COLORS=(
 # --- Functions ---
 extract_colors() {
     validate_file "$COLORS_FILE" "Colors file"
-    
+
     declare -gA COLORS
-    
+
     # Extract colors with fallbacks
     local bg fg c0 c1 c3 c4 c5
     bg=$(extract_css_color "$COLORS_FILE" "background")
@@ -48,7 +48,7 @@ extract_colors() {
     c3=$(extract_css_color "$COLORS_FILE" "color3")
     c4=$(extract_css_color "$COLORS_FILE" "color4")
     c5=$(extract_css_color "$COLORS_FILE" "color5")
-    
+
     # Set colors with fallbacks
     COLORS[BG]="${bg:-${DEFAULT_COLORS[BG]}}"
     COLORS[FG]="${fg:-${DEFAULT_COLORS[FG]}}"
@@ -61,14 +61,14 @@ extract_colors() {
 
 generate_derived_colors() {
     declare -gA DERIVED_COLORS
-    
+
     local accent selection
     accent=$(lighten_hex "${COLORS[C4]}" 10)
     selection=$(lighten_hex "${COLORS[C3]}" 15)
-    
+
     DERIVED_COLORS[ACCENT]="$accent"
     DERIVED_COLORS[SELECTION]="$selection"
-    
+
     # Convert to RGB for rgba usage
     DERIVED_COLORS[BG_RGB]=$(hex_to_rgb "${COLORS[BG]}")
     DERIVED_COLORS[C0_RGB]=$(hex_to_rgb "${COLORS[C0]}")
@@ -96,10 +96,14 @@ generate_wofi_style() {
     cat >"$STYLE_FILE" <<EOL
 /* ~/.config/wofi/style.css - Auto-generated from colors.css */
 
+* {
+    border-radius: 0px;
+}
+
 window {
+    border: 2px solid #${DERIVED_COLORS[SELECTION]};
     margin: 5px;
-    border-radius: 8px;
-    background-color: rgba(${DERIVED_COLORS[BG_RGB]}, 0.9);
+    background-color: rgba(${DERIVED_COLORS[BG_RGB]}, 1);
     font-family: "${FONT_FAMILY}", monospace;
 }
 
@@ -107,7 +111,6 @@ window {
     margin: 8px;
     padding: 10px 12px;
     border: 2px solid #${DERIVED_COLORS[ACCENT]};
-    border-radius: 8px;
     color: #${COLORS[FG]};
     background-color: rgba(${DERIVED_COLORS[C0_RGB]}, 0.8);
     outline: none;
@@ -152,7 +155,6 @@ window {
 #entry {
     padding: 8px;
     margin: 2px 5px;
-    border-radius: 8px;
     transition: all 0.2s ease;
 }
 
@@ -188,7 +190,7 @@ main() {
     generate_derived_colors
     log_color_info
     generate_wofi_style
-    
+
     log_success "Wofi theme updated successfully"
 }
 

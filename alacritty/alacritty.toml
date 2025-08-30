@@ -7,7 +7,7 @@ import = ["./colors.toml"]
 padding.x = 10
 padding.y = 10
 dynamic_padding = true
-opacity = 0.9
+opacity = 1
 decorations = "none"
 
 [font]

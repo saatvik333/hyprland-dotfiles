@@ -56,9 +56,9 @@ kitty = { src = 'kitty.conf', dst = '~/.config/kitty/colors.conf' }
 
 dunst = { src = 'dunstrc', dst = '~/.config/dunst/dunstrc' }
 
-hyprswitch = { src = 'hyprswitch.css', dst = '~/.config/hypr/config/hyprswitch.css' }
+hyprswitch = { src = 'hyprswitch.css', dst = '~/.config/hypr/hyprswitch.css' }
 
-border = { src = 'border.conf', dst = '~/.config/hypr/config/border.conf' }
+border = { src = 'border.conf', dst = '~/.config/hypr/border.conf' }
 
 vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
 
@@ -67,3 +67,5 @@ vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }
 neopywal = { src = 'neopywal.vim', dst = '~/.cache/wallust/colors_neopywal.vim' }
 
 swaync = { src = "swaync.css", dst = "~/.config/swaync/colors.css" }
+
+vicinae = { src = "vicinae.json", dst = "~/.config/vicinae/themes/theme.json" }
