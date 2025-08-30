@@ -6,11 +6,10 @@ A comprehensive, modern, rust-powered Hyprland 🍚 with a focus on featuring au
 
 This configuration provides a complete desktop environment built around Hyprland with intelligent automation systems. The setup includes dynamic theme synchronization across all applications, animated wallpaper support, and a modular script architecture for system management.
 
-https://github.com/user-attachments/assets/d348e384-ef6b-4c0d-9aef-bea7f89104bc
-
-|Swaync | Waybar |
+|||
 |---------|-----------|
-| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c11ad43f-59d0-4dbf-b19f-f9a9a22727e3" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d101132d-b038-480f-8c3d-41a87a7c2952" />|
+| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d8e8626-99ef-40e6-86a8-3c442f3ceaf5" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cc1375ed-bdd1-485b-b570-368d82cef2d0" /> |
+| <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/df4f979d-4428-4220-816a-83235ccc9f86" /> | <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/db2f71c6-4b9b-4c11-8569-ad608b40060b" /> |
 
 ## Key Features
 
@@ -35,6 +34,8 @@ https://github.com/user-attachments/assets/d348e384-ef6b-4c0d-9aef-bea7f89104bc
 - **Editor**: Neovim with theme synchronization
 - **Browser**: Custom themes and integration
 - **Development**: VSCode, various development tools
+- **Launcher**: Wofi, Vicinae
+- **Notification**: Swaync, Dunst
 
 ## Configuration Structure
 
