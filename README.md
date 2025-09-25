@@ -2,6 +2,10 @@
 
 A comprehensive, modern, rust-powered Hyprland 🍚 with a focus on featuring automated theme management, dynamic wallpaper integration, and seamless workflow optimization.
 
+>[!NOTE]
+>I've switched from Hyprland to Niri, so this repository will no longer be actively maintained.
+>
+>For people interested in trying out my Niri configuration: [niri-dotfiles](https://github.com/saatvik333/niri-dotfiles)
 ## Overview
 
 This configuration provides a complete desktop environment built around Hyprland with intelligent automation systems. The setup includes dynamic theme synchronization across all applications, animated wallpaper support, and a modular script architecture for system management.
