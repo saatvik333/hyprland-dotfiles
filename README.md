@@ -2,6 +2,10 @@
 
 A comprehensive, modern, rust-powered Hyprland 🍚 with a focus on featuring automated theme management, dynamic wallpaper integration, and seamless workflow optimization.
 
+>There is another branch of this repository that has a sharper, minimal, bordered configuration [LINK](https://github.com/saatvik333/hyprland-dotfiles/tree/rice/sharp-minimal).
+
+---
+
 >[!NOTE]
 >I've switched from Hyprland to Niri, so this repository will no longer be actively maintained.
 >
